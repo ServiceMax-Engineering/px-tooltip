@@ -27,7 +27,6 @@
 $tooltip-background-color: var(--px-tooltip-background-color, white);
 $tooltip-text-color: var(--px-tooltip-text-color, black);
 $tooltip-border-color: var(--px-tooltip-border-color, black);
-$tooltip-shadow: 0 1px 3px 0 var(--px-tooltip-shadow-color, black);
 $tooltip-max-width: var(--px-tooltip-max-width, 400px);
 $carat-size: 5px;
 
@@ -42,105 +41,117 @@ $carat-size: 5px;
 
 //carat on the left
 #tooltip.right:after, #tooltip.right:before {
-	right: calc(100% - 1px);
-	top: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+  top: calc(50% - 7px);
+  left: 1px;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  border-color: transparent transparent $tooltip-background-color $tooltip-background-color;
+  border: $carat-size solid $tooltip-background-color;
+
+  transform-origin: 0 0;
+  transform: rotate(45deg);
 }
 #tooltip.right:after {
-	border-color: rgba(136, 183, 213, 0);
-	border-right-color: $tooltip-background-color;
-	border-width: $carat-size;
-	margin-top: -$carat-size;
+	z-index: -10;
+  box-shadow: 0 3px 3px 0 var(--px-tooltip-shadow-color, black);
 }
 #tooltip.right:before {
-	border-color: rgba(194, 225, 245, 0);
-	border-right-color: $tooltip-border-color;
-	border-width: $carat-size + 1px;
-	margin-top: -$carat-size - 1px;
+	z-index: 10;
 }
 
 //carat on the right
 #tooltip.left:after, #tooltip.left:before {
-	left: calc(100% - 1px);
-	top: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+  top: calc(50% - 7px);
+  right: 1px;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  border-color: transparent transparent $tooltip-background-color $tooltip-background-color;
+  border: $carat-size solid $tooltip-background-color;
+
+  transform-origin: 100% 0;
+  transform: rotate(-45deg);
 }
 #tooltip.left:after {
-	border-color: rgba(136, 183, 213, 0);
-	border-left-color: $tooltip-background-color;
-	border-width: $carat-size;
-	margin-top: -$carat-size;
+  z-index: -10;
+  box-shadow: 0 3px 3px 0 var(--px-tooltip-shadow-color, black);
 }
 #tooltip.left:before {
-	border-color: rgba(194, 225, 245, 0);
-	border-left-color: $tooltip-border-color;
-	border-width: $carat-size + 1px;
-	margin-top: -$carat-size - 1px;
+	z-index: 10;
 }
 
 //carat on top
 #tooltip.bottom:after, #tooltip.bottom:before {
-	left: 50%;
-	bottom: calc(100% - 1px);
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+  left: calc(50% - 2.5px);
+  pointer-events: none;
+  box-sizing: border-box;
+  top: 1px;
+
+  border-color: transparent transparent $tooltip-background-color $tooltip-background-color;
+  border: $carat-size solid $tooltip-background-color;
+
+  transform-origin: 100% 0;
+  transform: rotate(45deg);
 }
 #tooltip.bottom:after {
-	border-color: rgba(136, 183, 213, 0);
-	border-bottom-color: $tooltip-background-color;
-	border-width: $carat-size;
-	margin-left: -$carat-size;
+  z-index: 10;
+  box-shadow: -3px -3px 3px 0 var(--px-tooltip-shadow-color, black);
 }
 #tooltip.bottom:before {
-	border-color: rgba(194, 225, 245, 0);
-	border-bottom-color: $tooltip-border-color;
-	border-width: $carat-size + 1px;
-	margin-left: -$carat-size - 1px;
+	z-index: -10;
+}
+
+#tooltip.bottom {
+  box-shadow: 0 -3px 3px 0 var(--px-tooltip-shadow-color, black);
 }
 
 //carat on bottom
 #tooltip.top:after, #tooltip.top:before {
-	left: 50%;
-	top: calc(100% - 1px);
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+  left: calc(50% - 8.5px);
+  pointer-events: none;
+  box-sizing: border-box;
+  bottom: -1px;
+
+  border-color: transparent transparent $tooltip-background-color $tooltip-background-color;
+  border: $carat-size solid $tooltip-background-color;
+
+  transform-origin: 100% 0;
+  transform: rotate(-45deg);
 }
 #tooltip.top:after {
-	border-color: rgba(136, 183, 213, 0);
-	border-top-color: $tooltip-background-color;
-	border-width: $carat-size;
-	margin-left: -$carat-size;
+  z-index: 10;
+  box-shadow: -3px 3px 3px 0 var(--px-tooltip-shadow-color, black);
 }
 #tooltip.top:before {
-	border-color: rgba(194, 225, 245, 0);
-	border-top-color: $tooltip-border-color;
-	border-width: $carat-size + 1px;
-	margin-left: -$carat-size - 1px;
+	z-index: -10;
 }
 
 .tooltip-container {
   background-color: $tooltip-background-color;
   color: $tooltip-text-color;
   border: 1px solid $tooltip-border-color;
-  box-shadow: $tooltip-shadow;
+  box-shadow: 0 3px 3px 0 var(--px-tooltip-shadow-color, black);
   pointer-events: none;
   outline: none;
   padding: 15px 20px;

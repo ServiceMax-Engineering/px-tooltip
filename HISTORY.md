@@ -1,3 +1,7 @@
+v1.3.3
+=================
+* Refine the shadow style
+
 v1.3.1
 =================
 * add slot to docs (#32)
