@@ -1,3 +1,8 @@
+
+v1.3.4
+=================
+* Make the tooltip support specify verticalAlign value
+
 v1.3.3
 =================
 * Refine the shadow style

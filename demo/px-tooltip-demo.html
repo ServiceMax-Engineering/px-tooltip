@@ -59,6 +59,7 @@ limitations under the License.
             id="tooltip"
             for="btn1"
             orientation="{{props.orientation.value}}"
+            vertical-align="{{props.verticalAlign.value}}"
             delay="{{props.delay.value}}"
             tooltip-message="{{props.tooltipMessage.value}}"
             tooltip-style="{{props.tooltipStyle.value}}">
@@ -103,6 +104,7 @@ limitations under the License.
             { configName: "Auto position",
               orientation: "auto",
               tooltipMessage: "This is a tooltip",
+              verticalAlign: "middle",
               delay: 50,
               siblingElement: "<button id='btn1'>Hover over me</button>"
             },
@@ -110,6 +112,7 @@ limitations under the License.
             { configName: "Bottom",
               orientation: "bottom",
               tooltipMessage: "This is a tooltip",
+              verticalAlign: "middle",
               delay: 50,
               siblingElement: "<button id='btn1'>Hover over me</button>"
             }
@@ -142,6 +145,14 @@ limitations under the License.
         defaultValue: 'This is a tooltip',
         inputType: 'text',
         inputPlaceholder: 'Tooltip message'
+      },
+
+
+      verticalAlign: {
+        type: String,
+        defaultValue: 'middle',
+        inputType: 'dropdown',
+        inputChoices: ['top', 'middle', 'bottom']
       },
 
       orientation: {
